@@ -12,6 +12,8 @@ import {MatInputModule} from '@angular/material';
 import { LoginComponent} from './home/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent
   ],
   imports: [
+    MatCardModule,MatTabsModule,
     FormsModule, ReactiveFormsModule,MatIconModule,
     MatSelectModule,
     MatInputModule,
