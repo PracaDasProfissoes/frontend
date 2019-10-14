@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
 getErrorMessage() {
   return this.email.hasError('required') ? 'You must enter a value' :
-      this.email.hasError('email') ? 'Not a valid email' :
+      this.email.hasError('email') ? 'Email não é valido' :
           '';
 }
 
