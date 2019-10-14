@@ -1,10 +1,26 @@
 .login-container {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-image: url("https://scontent.frec10-1.fna.fbcdn.net/v/t1.0-9/13912343_1047802455305520_2219330480044256319_n.jpg?_nc_cat=100&_nc_oc=AQmxjBC0q2CLLrzGZ585kAFwGb2jkECT4ymznkFep-2tb4lw6IfWQyQDdfsugMxK4ZI&_nc_ht=scontent.frec10-1.fna&oh=f14e427e80c443540cf7fb512870b7a9&oe=5E2EDB8B");
   height: 100%;
 }
 .login-tabs{
+  position: absolute;
+ top:  50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+  background-color:rgba(255,255,255,0.9);
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width:  40%;
+  height: 80%;
+}
+
+.example-small-box, .example-large-box {
+
+}
+
+.example-small-box {
+}
+
+.example-large-box {
 }

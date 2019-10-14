@@ -1,17 +1,18 @@
 <div class="login-container">
-  <div class="login-tabs">
+  <mat-card  class="login-tabs">
       <mat-tab-group dynamicHeight>
       <mat-tab label="Logar">
         <div class="example-small-box mat-elevation-z4">
           <mat-card class="login-card">
-            <mat-form-field>
-              <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-form-field >
+              <input matInput placeholder="Email" [formControl]="email" required>
               <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              <input matInput placeholder="Senha" [type]="!hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
             </mat-form-field>
           </mat-card>
@@ -20,9 +21,26 @@
 
       <mat-tab label="Registrar">
         <div class="example-large-box mat-elevation-z4">
-          Large content
+          <mat-card class="register-card">
+              <mat-form-field>
+                <input matInput placeholder="Nome da Escola">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Diretor">
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Email para cadastro" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Coloque sua senha" [type]="!hideaux ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hideaux = !hideaux" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
+                <mat-icon>{{!hideaux ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+          </mat-card>
         </div>
       </mat-tab>
     </mat-tab-group>
-  </div>
+  </mat-card >
 </div>
