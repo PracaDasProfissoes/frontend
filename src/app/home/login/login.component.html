@@ -19,15 +19,14 @@
           </mat-card>
         </div>
       </mat-tab>
-
       <mat-tab label="Registrar">
         <div class="example-large-box mat-elevation-z4">
           <mat-card class="register-card">
               <mat-form-field class="form">
-                <input matInput placeholder="Nome da Escola">
+                <input matInput placeholder="Nome da Escola" >
               </mat-form-field>
               <mat-form-field class="form" >
-                <input matInput placeholder="Diretor">
+                <input matInput placeholder="Diretor" >
               </mat-form-field>
               <mat-form-field class="form">
                 <input matInput placeholder="Email para cadastro" [formControl]="email" required>
@@ -39,6 +38,13 @@
                 <mat-icon>{{!hideaux ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
               </mat-form-field>
+              <mat-form-field class="form">
+                <input matInput placeholder="Confirme sua senha" [type]="!hideaux2 ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hideaux2 = !hideaux2" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
+                <mat-icon>{{!hideaux2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <button class="button-login" mat-raised-button color="primary" (click)="registrar()"  >Registrar</button>
           </mat-card>
         </div>
       </mat-tab>
