@@ -7,7 +7,10 @@ import {FormControl, Validators, FormGroup} from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  email = new FormControl('', [Validators.required, Validators.email])
+  email = new FormControl('', [Validators.required, Validators.email]);
+  hideaux = false;
+  hideaux2 = false;
+  hide = false;
   escola = {
     nome: String,
     email: String,
@@ -33,12 +36,12 @@ getErrorMessage() {
     // this.escolaForm = new FormGroup({
     //   nomeEscola: new FormControl( this.escola.nome , [Validators.required] ),
     //   // sigla: new FormControl(this.escola.sigla, [Validators.required]),
-    //   // cnpj: new FormControl(this.escola.cnpj, [Validators.required]), 
+    //   // cnpj: new FormControl(this.escola.cnpj, [Validators.required]),
     //   // telefone: new FormControl(this.escola.telefone, [Validators.required]),
     //   nomeDiretor: new FormControl(this.escola.diretor, [Validators.required]),
     //   senha: new FormControl(this.escola.senha, [Validators.required]),
     //   confSenha: new FormControl(this.escola.confSenha, [Validators.required]),
-      
+
     // });
   }
 
