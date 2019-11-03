@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material';
+import {MatSelectModule, MatHorizontalStepper, MatStepperModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import { LoginComponent} from './home/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,13 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
+    MatStepperModule,
+    FlexLayoutModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
 
   ],
   providers: [],

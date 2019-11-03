@@ -1,5 +1,6 @@
 .login-container {
-  background-image: url("https://scontent.frec10-1.fna.fbcdn.net/v/t1.0-9/13912343_1047802455305520_2219330480044256319_n.jpg?_nc_cat=100&_nc_oc=AQmxjBC0q2CLLrzGZ585kAFwGb2jkECT4ymznkFep-2tb4lw6IfWQyQDdfsugMxK4ZI&_nc_ht=scontent.frec10-1.fna&oh=f14e427e80c443540cf7fb512870b7a9&oe=5E2EDB8B");
+  // background-image: url("https://scontent.frec10-1.fna.fbcdn.net/v/t1.0-9/13912343_1047802455305520_2219330480044256319_n.jpg?_nc_cat=100&_nc_oc=AQmxjBC0q2CLLrzGZ585kAFwGb2jkECT4ymznkFep-2tb4lw6IfWQyQDdfsugMxK4ZI&_nc_ht=scontent.frec10-1.fna&oh=f14e427e80c443540cf7fb512870b7a9&oe=5E2EDB8B");
+  background-image: linear-gradient(to bottom right, #20284d, #106f8f);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -16,14 +17,21 @@
   margin-right: auto;
   width:  100%;
   max-width: 405px;
-  height: 70%;
+  min-height: 600px;
 }
+.login-card, .registro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .form{
   width: 80%;
-  left: 10%;
-  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .button-login{
-  left: 10%;
   width: 80%;
 }

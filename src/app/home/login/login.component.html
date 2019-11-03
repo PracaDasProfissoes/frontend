@@ -9,7 +9,7 @@
                 <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
               </mat-form-field>
               <mat-form-field class="form">
-                <input matInput placeholder="Senha" [type]="!hide ? 'password' : 'text'">
+                <input matInput placeholder="Senha" [formControl]="senha" [type]="!hide ? 'password' : 'text'">
                 <button mat-icon-button matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                 <mat-icon>{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -20,37 +20,80 @@
         </div>
       </mat-tab>
       <mat-tab label="Registrar">
-        <div class="example-large-box mat-elevation-z4">
-          <mat-card class="register-card">
-              <mat-form-field class="form">
-                <input matInput placeholder="Nome da Escola" >
-              </mat-form-field>
-              <mat-form-field class="form" >
-                <input matInput placeholder="Diretor" >
-              </mat-form-field>
-              <mat-form-field class="form">
-                <input matInput placeholder="Email para cadastro" [formControl]="email" required>
-                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-              </mat-form-field>
-              <mat-form-field class="form">
-                <input matInput placeholder="Coloque sua senha" [type]="!hideaux ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hideaux = !hideaux" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
-                <mat-icon>{{!hideaux ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-              </mat-form-field>
-              <mat-form-field class="form">
-                <input matInput placeholder="Confirme sua senha" [type]="!hideaux2 ? 'password' : 'text'">
-                <button mat-icon-button matSuffix (click)="hideaux2 = !hideaux2" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
-                <mat-icon>{{!hideaux2 ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-              </mat-form-field>
-              <button class="button-login" mat-raised-button color="primary" (click)="registrar()"  >Registrar</button>
-          </mat-card>
-        </div>
+          <mat-horizontal-stepper>
+            <mat-step label="Escola">
+            <div class="registro">
+                <mat-form-field class="form">
+                  <input matInput placeholder="Nome da Escola" [formControl]="nome">
+                </mat-form-field>
+                <mat-form-field class="form">
+                  <input matInput placeholder="Sigla" [formControl]="sigla">
+                </mat-form-field>
+                <mat-form-field class="form">
+                  <input matInput placeholder="CNPJ" [formControl]="cnpj">
+                </mat-form-field>
+                <mat-form-field class="form">
+                  <input matInput placeholder="Telefone" [formControl]="telefone">
+                </mat-form-field>
+                <mat-form-field class="form">
+                  <input matInput placeholder="Email para cadastro" [formControl]="email" required>
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="form">
+                  <input matInput placeholder="Coloque sua senha" [formControl]="senha" [type]="!hideaux ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hideaux = !hideaux" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
+                  <mat-icon>{{!hideaux ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <mat-form-field class="form">
+                  <input matInput placeholder="Confirme sua senha"  [type]="!hideaux2 ? 'password' : 'text'">
+                  <button mat-icon-button matSuffix (click)="hideaux2 = !hideaux2" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
+                  <mat-icon>{{!hideaux2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                </mat-form-field>
+                <button class="button-login" mat-raised-button color="primary" matStepperNext>Proximo</button>
+
+              </div>
+            </mat-step>
+            <mat-step label="Endereço">
+              <div  class="registro">
+                <mat-form-field class="form" >
+                    <input matInput placeholder="CEP" [formControl]="cep" >
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="15px">
+                  <mat-form-field fxFlex="52">
+                      <input matInput placeholder="Rua" [formControl]="rua" >
+                  </mat-form-field>
+                  <mat-form-field fxFlex="20">
+                      <input matInput placeholder="Numero" [formControl]="numero" >
+                  </mat-form-field>
+                </div>
+                <mat-form-field class="form" >
+                  <input matInput placeholder="Bairro" [formControl]="bairro" >
+                </mat-form-field>
+                <mat-form-field class="form" >
+                  <input matInput placeholder="Cidade" [formControl]="cidade" >
+                </mat-form-field>
+                <mat-form-field class="form" >
+                  <input matInput placeholder="Estado" [formControl]="estado" >
+                </mat-form-field>
+
+                <button class="button-login" mat-raised-button color="primary" matStepperNext>Proximo</button>
+              </div>
+            </mat-step>
+            <mat-step label="Diretor">
+              <div class="registro">
+                <mat-form-field class="form" >
+                  <input matInput placeholder="Nome do Diretor" [formControl]="diretor" >
+                </mat-form-field>
+                <mat-form-field class="form" >
+                  <input matInput placeholder="CPF do Diretor" [formControl]="cpf" >
+                </mat-form-field>
+                <button class="button-login" mat-raised-button color="primary" (click)="registrar()"  >Registrar</button>
+              </div>
+            </mat-step>
+            </mat-horizontal-stepper>
       </mat-tab>
     </mat-tab-group>
   </mat-card >
-</div>
-<div>
-  dslakldskalds
 </div>
