@@ -1,6 +1,9 @@
+import { TokenService } from './token-service';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders  } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const apiUri = "/api";
 
@@ -9,7 +12,8 @@ const apiUri = "/api";
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private auth: TokenService) { }
+
 
   criarEscola(data){
     console.log(`${environment.apiBaseUrl + apiUri}/escola`);
@@ -21,9 +25,13 @@ export class ApiService {
   }
 
   logar(data){
-    let result = this.http.post(`${environment.apiBaseUrl}/login`, data);
-    result.subscribe( res => {
-      console.log(res);
+
+    return this.http.post<any>(`${environment.apiBaseUrl}/login`, data, {
+      headers: new HttpHeaders({'Content-Type': 'application/json'}),
+      observe: 'response'
+    } ) .subscribe( resp => {
+        const token = resp.headers.get('authorization');
+        this.auth.storeToken(token);
     });
   }
 }

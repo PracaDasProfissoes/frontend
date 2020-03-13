@@ -14,7 +14,7 @@ export class TokenService {
   }
 
   storeToken(token: string) {
-    localStorage.setItem('token', `Bearer ${token}`);
+    localStorage.setItem('token', token);
   }
 
   setPrivileges(privileges: any[]) {

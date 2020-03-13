@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -62,11 +63,12 @@ getErrorMessage() {
 
   async logar(){
     let data = {
-      "email": this.email.value,
-      "senha": this.senha.value
+      email: this.email.value,
+      senha: this.senha.value
     };
-
+    console.log("logando...");
     let result = await this.api.logar(data);
+    console.log(result);
   }
 
 }
