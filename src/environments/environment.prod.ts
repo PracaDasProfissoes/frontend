@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://backpraca.herokuapp.com'
+  apiBaseUrl: 'http://150.165.44.11'
 };
