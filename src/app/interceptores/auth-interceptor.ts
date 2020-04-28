@@ -1,5 +1,5 @@
-import { environment } from './../../../environments/environment.prod';
-import { TokenService } from './../../services/token-service';
+import { environment } from 'src/environments/environment';
+import { TokenService } from 'src/app/services/token-service';
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';

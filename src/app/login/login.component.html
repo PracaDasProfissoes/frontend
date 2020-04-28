@@ -1,0 +1,28 @@
+<div class="login-container dark-praca">
+  <div class="content">
+    <img src="assets/img/logo.png" alt="">
+    <div class="inputs">
+      <form [formGroup]="loginForm" novalidate>
+      <mat-form-field class="form">
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="loginForm.get('email').hasError('required')">Email é obrigatorio.</mat-error>
+        <mat-error *ngIf="loginForm.get('email').hasError('pattern')">Email invalido.</mat-error>
+      </mat-form-field>
+      <mat-form-field class="form">
+        <input matInput placeholder="Senha" formControlName="senha" [type]="!hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon >{{!hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="loginForm.get('senha').hasError('required')">Senha é obrigatorio.</mat-error>
+        <mat-error *ngIf="loginForm.get('senha').hasError('minlength')">Senha minimo 6 caracteres.</mat-error>
+      </mat-form-field>
+    </form>
+    </div>
+    <button [disabled]="loginForm.invalid" class="button-login" color="primary" mat-raised-button (click)="logar()">LOGIN</button>
+    <div class="opcoes">
+      <a [routerLink]="['/recuperar-senha']">Esqueci a senha</a>
+      <a [routerLink]="['/registrar']">Registrar-se</a>
+    </div>
+   </div>
+</div>

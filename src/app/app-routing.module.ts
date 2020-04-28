@@ -2,11 +2,15 @@ import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
 //router
-import { LoginComponent} from './home/login/login.component';
+import { LoginComponent} from './login/login.component';
+import { RegistrarComponent } from './registrar/registrar.component';
+import { RecuperarSenhaComponent } from './recuperar-senha/recuperar-senha.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'registrar', component: RegistrarComponent},
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent}
 ];
 
 @NgModule({

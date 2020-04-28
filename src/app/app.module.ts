@@ -9,18 +9,24 @@ import { AppRoutingModule } from './app-routing.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule, MatHorizontalStepper, MatStepperModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
-import { LoginComponent} from './home/login/login.component';
+import { LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RegistrarComponent } from './registrar/registrar.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { RecuperarSenhaComponent } from './recuperar-senha/recuperar-senha.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrarComponent,
+    RecuperarSenhaComponent
   ],
   imports: [
     MatCardModule,MatTabsModule,
@@ -34,7 +40,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
 
   ],
   providers: [],

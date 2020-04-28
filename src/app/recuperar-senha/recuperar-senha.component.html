@@ -1,0 +1,15 @@
+<div class="recuperar-container dark-praca">
+  <div class="content">
+    <a [routerLink]="['/login']"><img src="assets/img/logo.png" alt=""></a>
+    <div class="input-email">
+      <form [formGroup]="recuperarForm" novalidate>
+        <mat-form-field color="primary" class="form">
+          <input matInput placeholder="Email" formControlName="email" type="text">
+          <mat-error *ngIf="recuperarForm.get('email').hasError('required')" >Email é obrigatorio</mat-error>
+          <mat-error *ngIf="recuperarForm.get('email').hasError('pattern') && !recuperarForm.get('email').hasError('required')" >Email Inválido</mat-error>
+        </mat-form-field>
+      </form>
+    </div>
+    <button [disabled]="recuperarForm.invalid" class="button-recuperar" color="primary" mat-raised-button>Enviar</button>
+  </div>
+</div>

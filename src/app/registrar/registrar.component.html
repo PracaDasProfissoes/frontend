@@ -1,0 +1,65 @@
+<div class="registrar-container dark-praca">
+  <div class="content">
+    <a [routerLink]="['/login']"><img src="assets/img/logo.png" alt=""></a>
+
+    <div class="inputs-registrar">
+      <form [formGroup]="escolaForm" novalidate>
+        <div class="group-form">
+          <mat-form-field class="form">
+            <input matInput placeholder="Nome da Escola" formControlName="nome">
+            <mat-error *ngIf="escolaForm.get('nome').hasError('required')">{{'Nome é obrigatorio'}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form">
+            <input matInput placeholder="Sigla" formControlName="sigla">
+            <mat-error *ngIf="escolaForm.get('sigla').hasError('required')">{{'Sigla é obrigatorio'}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="group-form">
+          <mat-form-field class="form">
+            <input mask="00.000.000/0000-00" matInput placeholder="CNPJ" formControlName="cnpj" (input)="log()">
+            <mat-error *ngIf="escolaForm.get('cnpj').hasError('required')">{{'CNPJ é obrigatorio'}}</mat-error>
+            <mat-error *ngIf="escolaForm.get('cnpj').hasError('mask') || escolaForm.get('cnpj').hasError('cnpjValidator') && !escolaForm.get('cnpj').hasError('required')">{{'CNPJ invalido'}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form">
+            <input mask="(00) 0000-0000" matInput placeholder="Telefone" formControlName="telefone">
+            <mat-error *ngIf="escolaForm.get('telefone').hasError('required')">{{'Telefone é obrigatorio'}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="group-form">
+          <mat-form-field class="form">
+            <input matInput id="email" name="email" placeholder="Email para cadastro" formControlName="email" (input)="log()">
+            <mat-error *ngIf="escolaForm.get('email').hasError('required')">{{'Email é obrigatorio'}}</mat-error>
+            <mat-error *ngIf="emailInvalido('email')">{{'Email invalido'}}</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form">
+            <input matInput placeholder="Confirmar Email" formControlName="confemail" required>
+            <mat-error *ngIf="escolaForm.get('confemail').hasError('required')">Confirmar Email é obrigatorio</mat-error>
+            <mat-error *ngIf="escolaForm.get('confemail').hasError('emailsNotMatch') && !escolaForm.get('confemail').hasError('required') && !emailInvalido('confemail')">Os emails informados não coincidem</mat-error>
+            <mat-error *ngIf="emailInvalido('confemail')">{{'Email invalido'}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="group-form">
+          <mat-form-field class="form">
+            <input matInput placeholder="Coloque sua senha" formControlName="senha" [type]="!hideaux ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hideaux = !hideaux" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
+            <mat-icon color="primary">{{!hideaux ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="escolaForm.get('senha').hasError('required')">Senha é obrigatoria</mat-error>
+            <mat-error *ngIf="escolaForm.get('senha').hasError('minlength')">Senha minimo 6 caracteres</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form" color="primary">
+            <input matInput placeholder="Confirme sua senha" formControlName="confsenha" [type]="!hideaux2 ? 'password' : 'text'" (input)="log()">
+            <button mat-icon-button matSuffix (click)="hideaux2 = !hideaux2" [attr.aria-label]="'Hide passwordaux'" [attr.aria-pressed]="hideaux">
+            <mat-icon color="primary" >{{!hideaux2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="escolaForm.get('confsenha').hasError('required')">Confirmar senha é obrigatorio</mat-error>
+            <mat-error *ngIf="escolaForm.get('confsenha').hasError('minlength')">Confirmar senha minimo 6 caracteres</mat-error>
+            <mat-error *ngIf="escolaForm.get('confsenha').hasError('passesNotMatch') && !escolaForm.get('confsenha').hasError('required') && !escolaForm.get('confsenha').hasError('minlength')">As senhas informadas não coincidem</mat-error>
+          </mat-form-field>
+        </div>
+      </form>
+
+    </div>
+      <button [disabled]="!escolaForm.valid" color="primary" class="button-registrar" mat-raised-button (click)="registrar(escolaForm.value)"  >REGISTRAR</button>
+  </div>
+</div>
