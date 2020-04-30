@@ -10,5 +10,6 @@ RUN npm run dev-test
 
 # Estagio 2 - Será responsavel por expor a aplicação
 FROM nginx:1.16
-COPY --from=node /app/dist/sistemaPracaFrontend /usr/share/nginx/html
+RUN mkdir /usr/share/nginx/html/teste
+COPY --from=node /app/dist/sistemaPracaFrontend /usr/share/nginx/html/teste
 COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf

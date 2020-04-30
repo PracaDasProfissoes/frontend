@@ -36,8 +36,13 @@
 .button-registrar:hover{
   background-color: rgba($color: #fff, $alpha: 0.8);
 }
+@media only screen and (max-width: 900px) {
+  .content{
+    width: 580px;
+  }
+}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
   .content{
     width: 300px;
     height: auto;
