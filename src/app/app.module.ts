@@ -19,6 +19,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { RecuperarSenhaComponent } from './recuperar-senha/recuperar-senha.component';
+import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { RecuperarSenhaComponent } from './recuperar-senha/recuperar-senha.compo
     AppRoutingModule,
     MatFormFieldModule,
     HttpClientModule,
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
   ],
   providers: [],
