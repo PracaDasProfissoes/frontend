@@ -1,0 +1,26 @@
+<mat-sidenav-container class="menu-container">
+  <mat-sidenav class="menu-drawn" opened mode="side">
+    <div class="menu-group">
+      <mat-toolbar class="menu-toolbar" color="primary">
+        <span class="menu-drawn-title">MENU</span>
+      </mat-toolbar>
+      <mat-nav-list class="menu-list">
+        <mat-divider class="menu-divider"></mat-divider>
+        <a mat-list-item class="menu-item"><mat-icon class="menu-item-icon" >event_note</mat-icon>CALENDARIO</a>
+        <mat-divider class="menu-divider"></mat-divider>
+        <a mat-list-item class="menu-item"><mat-icon class="menu-item-icon" >person</mat-icon>PERFIL</a>
+        <mat-divider class="menu-divider"></mat-divider>
+        <a mat-list-item class="menu-item"><mat-icon class="menu-item-icon" >assignment</mat-icon>VISITAS</a>
+        <mat-divider class="menu-divider"></mat-divider>
+        <a mat-list-item class="menu-item"><mat-icon class="menu-item-icon" >group</mat-icon>ALUNOS</a>
+        <mat-divider class="menu-divider"></mat-divider>
+        <a mat-list-item class="menu-item"><mat-icon class="menu-item-icon" >exit_to_app</mat-icon>SAIR</a>
+        <mat-divider class="menu-divider"></mat-divider>
+      </mat-nav-list>
+    </div>
+    <img class="menu-logo" src="assets/img/logo-mid.png" alt="">
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

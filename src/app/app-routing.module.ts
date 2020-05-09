@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: '',   redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
   { path: 'registrar', component: RegistrarComponent},
-  { path: 'recuperar-senha', component: RecuperarSenhaComponent}
+  { path: 'recuperar-senha', component: RecuperarSenhaComponent},
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule'}
 ];
 
 @NgModule({

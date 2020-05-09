@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule, MatHorizontalStepper, MatStepperModule} from '@angular/material';
+import {MatSelectModule, MatStepperModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import { LoginComponent} from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';

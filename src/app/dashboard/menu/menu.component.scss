@@ -1,0 +1,52 @@
+
+.menu-container{
+  min-height: 100%;
+}
+.menu-drawn{
+  width: 243px;
+  background-color: #272C4A;
+}
+
+.menu-group{
+  width: 100%;
+}
+
+::ng-deep .mat-drawer-inner-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.menu-logo{
+  margin-bottom: 40px;
+}
+
+.menu-drawn-title{
+  margin: 0 auto;
+}
+
+.menu-toolbar{
+  height: 56px;
+}
+
+.menu-item{
+  background-color: #20284d;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.menu-item-icon{
+  margin-right: 10px;
+}
+.menu-list{
+  padding-top: 0;
+}
+.menu-item:hover{
+  background-color: #2B3E6C;
+}
+.menu-divider{
+  background-color:#050B2B;
+}
+
+
